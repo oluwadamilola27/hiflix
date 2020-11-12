@@ -5,26 +5,25 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Stack(fit: StackFit.expand,
+      body:Stack(
       children: <Widget>[
         Container(
           decoration: BoxDecoration(
-            image: DecorationImage(
+              image: DecorationImage(
                 image:AssetImage('assets/image/Hit.png'),
-              fit: BoxFit.cover,
-            )
+                fit: BoxFit.cover,
+              )
           ),
-                ),
+        ),
         Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.baseline,
           children: <Widget>[
             Padding(
               padding: EdgeInsets.all(5),
               child: Container(
-                width: 20,
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.vertical()
                   ),
                   child: Text('SIGN IN'),
                   onPressed: () {},
@@ -37,23 +36,37 @@ class WelcomeScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(5),
               child: Container(
-                width: MediaQuery.of(context).size.width,
                 child: RaisedButton(
                   elevation: 50.0,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.vertical(),
                   ),
                   child: Text('CREATE ACCOUNT'),
                   onPressed: () {},
                   color: Colors.white,
                   textColor: Colors.black,
                   padding: EdgeInsets.fromLTRB(10,15,10,15),
-                ),
+                ), 
               ),
             ),
+            SizedBox(
+              height: 15,
+            ),
+             Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                Container(
+                  width: 100,
+                  child: Image.asset("assets/image/logo.png"),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+              ],
+            ),
           ],
-        )
-      ],
+        ),
+      ]
       )
     );
   }
